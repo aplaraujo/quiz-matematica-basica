@@ -20,6 +20,7 @@ const calculateUserScore = (userAnswers) => {
     const isTheUserAnswerCorrect = answer === correctAnswers[index];
     if (isTheUserAnswerCorrect) {
       score += 20;
+      return
     }
   });
 };
