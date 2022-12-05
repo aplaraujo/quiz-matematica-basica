@@ -108,7 +108,7 @@ h1 {
     background-color: var(--color-white);
     display: block;
     position: absolute;
-    transform: translate(50%, 50%);
+    transform: translate(33%, 35%);
     border-radius: 50%;
 }
 
@@ -136,6 +136,7 @@ h1 {
     background-color: var(--color-lavender-purple);
     color: var(--color-white);
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .quiz-popup {
@@ -173,7 +174,7 @@ h1 {
 }
 
 .quiz-popup__content h2 {
-    font-size: 2rem;
+    font-size: 3vw;
 }
 
 .quiz-popup__content span {
