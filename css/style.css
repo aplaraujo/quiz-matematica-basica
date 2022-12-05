@@ -24,6 +24,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font-size: inherit;
 	vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 
@@ -119,6 +120,7 @@ h1 {
     color: var(--color-oxford-blue);
     font-size: 1.25rem;
     font-weight: bolder;
+    margin-bottom: 1rem;
 }
 
 .quiz__submit {
@@ -134,4 +136,47 @@ h1 {
     background-color: var(--color-lavender-purple);
     color: var(--color-white);
     border-radius: 4px;
+}
+
+.quiz-popup {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.quiz-popup__content {
+    text-align: center;
+    width: 100%;
+    max-width: 50%;
+    margin: 10% auto;
+    padding: 4rem;
+    background-color: var(--color-white);
+    position: relative;
+    border-radius: 4px;
+}
+
+.quiz-popup__close button{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-family: 'Mandali', sans-serif;
+    border: none;
+    padding: 0 1rem;
+    background-color: var(--color-lavender-purple);
+    color: var(--color-white);
+    border-radius: 4px;
+}
+
+.quiz-popup__content h2 {
+    font-size: 2rem;
+}
+
+.quiz-popup__content span {
+    color: var(--color-lavender-purple);
+    font-size: 3rem;
 }
