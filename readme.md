@@ -9,3 +9,5 @@ Criado com:
 - JS
 
 CodePen: https://codepen.io/aplaraujo/pen/qBKLYgq
+
+Netlify: https://quiz-de-matematica-basica.netlify.app/
