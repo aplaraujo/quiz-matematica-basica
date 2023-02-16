@@ -4,8 +4,6 @@ const showPopup = document.querySelector(".quiz-popup");
 const popupClose = document.querySelector(".quiz-popup__close");
 const correctAnswers = ["C", "C", "C", "A", "B"];
 
-let score = 0;
-
 const getUserAnswers = () => {
   let userAnswers = [];
   correctAnswers.forEach((_, index) => {
@@ -15,14 +13,11 @@ const getUserAnswers = () => {
   return userAnswers;
 };
 
-const calculateUserScore = (userAnswers) => {
-  userAnswers.forEach((answer, index) => {
-    const isTheUserAnswerCorrect = answer === correctAnswers[index];
-    if (isTheUserAnswerCorrect) {
-      score += 20;
-      return
-    }
-  });
+const getScore = (userAnswers) => {
+  const maximumScore = 100 / userAnswers.length
+  return userAnswers.reduce((acc, userAnswer, index) => userAnswer === correctAnswers[index] 
+    ? acc + maximumScore 
+    : acc, 0)
 };
 
 const scrollScreen = () => {
@@ -33,7 +28,7 @@ const scrollScreen = () => {
   });
 };
 
-const animateFinalScore = () => {
+const showFinalScore = (score) => {
   let counter = 0;
 
   const timer = setInterval(() => {
@@ -49,8 +44,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   showPopup.style.display = "block";
   const userAnswers = getUserAnswers()
-  calculateUserScore(userAnswers)
-  animateFinalScore()
+  const score = getScore(userAnswers)
+  showFinalScore(score)
 });
 
 popupClose.addEventListener("click", () => {
